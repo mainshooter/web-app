@@ -1,5 +1,5 @@
 <?php
-  require_once 'config.php';
+  require_once APP_PATH . '/config.php';
   require_once 'Security.class.php';
 
   class DatabaseHandler {
@@ -19,10 +19,11 @@
      */
     public function __construct() {
       $this->Security = new Security();
-      $this->set_server_ip($config['db-server_ip']);
-      $this->set_server_port($config['db-server_port']);
-      $this->set_database_name($config['db-database_name']);
-      $this->set_login_credentials($config['db-username'], $config['db-password']);
+      $this->set_server_ip($GLOBALS['config']['db-server_ip']);
+      $this->set_server_port($GLOBALS['config']['db-server_port']);
+      $this->set_database_name($GLOBALS['config']['db-database_name']);
+      $this->set_login_credentials($GLOBALS['config']['db-username'], $GLOBALS['config']['db-password']);
+      $this->start_connection();
     }
 
     /**
@@ -68,11 +69,11 @@
     public function start_connection() {
       if ($this->check_if_database_credentials_are_filled_in() === true) {
         try {
-          $this->conn = new PDO("mysql:host=$this->serverIP;port=$this->port;dbname=$this->databaseName", $this->username, $this->password);
+          $this->conn = new PDO("mysql:host=$this->server_ip;port=$this->server_port;dbname=$this->database_name", $this->username, $this->password);
           // set the PDO error mode to exception
-          $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+          $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-          $conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
+          $this->conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
           // To fix limit issue with prepared statement
 
         } catch (Exception $e) {
@@ -90,7 +91,7 @@
         $query = $this->conn->prepare($sql);
         $query->execute($input);
         $row = $query->rowCount(PDO::FETCH_ASSOC);
-        $lastID = $conn->lastInsertId();
+        $lastID = $this->conn->lastInsertId();
         return($lastID);
       } catch (Exception $e) {
         return ("Couldn't execute query: " . $e->getMessage());
@@ -126,7 +127,7 @@
     }
 
     private function check_if_database_credentials_are_filled_in() {
-      if (!empty($this->server_ip) && !empty($this->server_port) && !empty($this->database_name) && !empty($this->username) && !empty($this->password)) {
+      if (!empty($this->server_ip) && !empty($this->server_port) && !empty($this->database_name) && !empty($this->username)) {
         return(true);
       }
       else {

@@ -432,3 +432,9 @@ table.dataTable thead .sorting:after {
     border-left-width: 0;
   }
 }
+button a {
+  color: white;
+}
+button a:hover {
+  color: white;
+}

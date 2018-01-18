@@ -71,7 +71,7 @@
         // We have a / after the router
         if ($this->router_request[0] != '') {
           // No empty name
-          $this->router_request = lcfirst($this->router_request);
+          $this->router_request[0] = lcfirst($this->router_request[0]);
           if (file_exists('controller/' . $this->router_request[0] . 'Controller.php') === true) {
             // We have also that file!
             $this->controller = $this->router_request[0];

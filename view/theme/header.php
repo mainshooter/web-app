@@ -1,8 +1,4 @@
-<?php
-/**
- * Header View
- */
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,39 +11,39 @@
 
     <meta name="application-name" content="&nbsp;"/>
     <meta name="msapplication-TileColor" content="#FFFFFF" />
-    <meta name="msapplication-TileImage" content="assets/icon/mstile-144x144.png" />
-    <meta name="msapplication-square70x70logo" content="assets/icon/mstile-70x70.png" />
-    <meta name="msapplication-square150x150logo" content="assets/icon/mstile-150x150.png" />
-    <meta name="msapplication-wide310x150logo" content="assets/icon/mstile-310x150.png" />
-    <meta name="msapplication-square310x310logo" content="assets/icon/mstile-310x310.png" />
+    <meta name="msapplication-TileImage" content="<?php echo siteURL(); ?>assets/icon/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="<?php echo siteURL(); ?>assetsicon/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="<?php echo siteURL(); ?>assetsicon/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="<?php echo siteURL(); ?>assetsicon/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="<?php echo siteURL(); ?>assetsicon/mstile-310x310.png" />
 
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="assets/icon/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/icon/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/icon/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/icon/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="assets/icon/apple-touch-icon-60x60.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="assets/icon/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="assets/icon/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="assets/icon/apple-touch-icon-152x152.png" />
-    <link rel="icon" type="image/png" href="assets/icon/favicon-196x196.png" sizes="196x196" />
-    <link rel="icon" type="image/png" href="assets/icon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/png" href="assets/icon/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="assets/icon/favicon-16x16.png" sizes="16x16" />
-    <link rel="icon" type="image/png" href="assets/icon/favicon-128.png" sizes="128x128" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo siteURL(); ?>assetsicon/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo siteURL(); ?>assetsicon/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo siteURL(); ?>assetsicon/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo siteURL(); ?>assetsicon/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="<?php echo siteURL(); ?>assetsicon/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo siteURL(); ?>assetsicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="<?php echo siteURL(); ?>assetsicon/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo siteURL(); ?>assetsicon/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="<?php echo siteURL(); ?>assetsicon/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="<?php echo siteURL(); ?>assetsicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="<?php echo siteURL(); ?>assetsicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="<?php echo siteURL(); ?>assetsicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="<?php echo siteURL(); ?>assetsicon/favicon-128.png" sizes="128x128" />
 
     <title>SameBestDevelopment - webapp</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo siteURL(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="assets/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="<?php echo siteURL(); ?>assets/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="assets/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?php echo siteURL(); ?>assets/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo siteURL(); ?>assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -71,7 +67,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">My Web App</a>
+                <a class="navbar-brand" href="index.html">My web app</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -250,10 +246,10 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.php?controller=pages&action=home"><i class="fa fa-home fa-fw"></i> Home</a>
+                            <a href="<?php echo siteURL(); ?>"><i class="fa fa-home fa-fw"></i> Home</a>
                         </li>
                         <li>
-                            <a href="index.php?controller=pages&action=about"><i class="fa fa-info fa-fw"></i> About</a>
+                            <a href="<?php echo siteURL(); ?>location/"><i class="fa fa-info fa-fw"></i>Location</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
