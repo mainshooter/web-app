@@ -21,5 +21,9 @@
     return($GLOBALS['config']['base_url']);
   }
 
+  function redirect($newLocation) {
+    header("Location: " . siteURL() . $newLocation);
+  }
+
 
 ?>
