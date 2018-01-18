@@ -76,6 +76,19 @@
       );
       $result = $this->DatabaseHandler->execute_query($sql, $input);
     }
+
+    /**
+     * Deletes a location from the db by locationID
+     * @param  [int] $locationID [The id of the location]
+     * @return [type]             [description]
+     */
+    public function deleteLocation($locationID) {
+      $sql = "DELETE FROM location WHERE id=:locationID";
+      $input = array(
+        "locationID" => $this->Security->check_input($locationID),
+      );
+      $result = $this->DatabaseHandler->execute_query($sql, $input);
+    }
   }
 
 

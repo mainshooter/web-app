@@ -63,5 +63,23 @@
         }
       }
     }
+
+    public function delete($locationID = false) {
+      if ($locationID != false) {
+        if (ISSET($_GET['confirm']) && $_GET['confirm'] == true) {
+          // Delete location and redirect to the overview
+          $deleteLocation = $this->Location->deleteLocation($locationID[0]);
+          redirect('location/');
+        }
+        else {
+          // Present confirm to delete the location
+          $locationID = $locationID[0];
+          $data['locationID'] = $locationID;
+          loadHeader();
+          loadView('location/delete-location.php', $data);
+          loadFooter();
+        }
+      }
+    }
   }
 ?>
