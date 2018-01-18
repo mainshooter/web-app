@@ -1,5 +1,4 @@
 <?php
-  require_once 'model/DatabaseHandler.class.php';
 
   class displayController {
 
@@ -8,6 +7,7 @@
      */
     public function index() {
       include 'view/theme/header.php';
+      loadView('display/home.php', ['name' => 'Peter']);
       include 'view/theme/footer.php';
     }
 

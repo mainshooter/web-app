@@ -39,6 +39,9 @@
       return($this->rootPath);
     }
 
+    /**
+     * Process the router and goes to the controller if every thign goes well
+     */
     public function proces_router() {
       $this->get_controller();
       $this->get_method();
@@ -68,6 +71,7 @@
         // We have a / after the router
         if ($this->router_request[0] != '') {
           // No empty name
+          $this->router_request = lcfirst($this->router_request);
           if (file_exists('controller/' . $this->router_request[0] . 'Controller.php') === true) {
             // We have also that file!
             $this->controller = $this->router_request[0];
