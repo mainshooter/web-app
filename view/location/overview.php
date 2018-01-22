@@ -21,3 +21,4 @@
 
   ?>
 </table>
+<button type="button" class="btn btn-primary"><a href="<?php echo siteURL() ?>location/add/">Nieuwe locatie</a></button>
