@@ -1,10 +1,14 @@
 <?php
   require_once APP_PATH . '/libs/model/Location.class.php';
+  require_once APP_PATH . '/libs/model/FormHandler.class.php';
+
   class locationController {
     private $Location;
+    private $FormHandler;
 
     public function __construct() {
       $this->Location = new Location();
+      $this->FormHandler = new FormHandler();
     }
 
     public function index() {
@@ -25,8 +29,9 @@
     }
 
     public function add() {
-      if (ISSET($_POST['locationName'])) {
-        $this->Location->addLocation($_POST['locationName']);
+      $this->FormHandler->setRequired('locationName');
+      if ($this->FormHandler->run() === true) {
+        $this->Location->addLocation($this->FormHandler->getPostValue('locationName'));
         $data['message'] = 'Locatie is toegevoegd';
         loadHeader();
         loadView('location/add-location.php', $data);
@@ -42,7 +47,8 @@
 
     public function edit($locationID = false) {
       if ($locationID != false) {
-        if (ISSET($_POST['locationName'])) {
+        $this->FormHandler->setRequired('locationName');
+        if ($this->FormHandler->run() === true) {
           // We have form submit
           $this->Location->updateLocation($locationID[0], $_POST['locationName']);
 
@@ -79,6 +85,9 @@
           loadView('location/delete-location.php', $data);
           loadFooter();
         }
+      }
+      else {
+        // redirect to the overview
       }
     }
   }
