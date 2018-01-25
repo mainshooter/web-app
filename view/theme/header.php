@@ -252,6 +252,9 @@
                             <a href="<?php echo siteURL(); ?>location/"><i class="fa fa-info fa-fw"></i>Location</a>
                         </li>
                         <li>
+                            <a href="<?php echo siteURL(); ?>product/"><i class="fa fa-product-hunt"></i>product</a>
+                        </li>
+                        <li>
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
