@@ -1,13 +1,13 @@
 <?php
   require_once APP_PATH . '/libs/model/FormHandler.class.php';
   require_once APP_PATH . '/libs/model/Product.class.php';
+  require_once APP_PATH .'/controller/parentController.php';
 
-  class productController {
-    private $FormHandler;
+  class productController extends parentController{
     private $Product;
 
     public function __construct() {
-      $this->FormHandler = new FormHandler();
+      parent::__construct();
       $this->Product = new Product();
     }
 

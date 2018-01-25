@@ -10,7 +10,6 @@
       $this->Location = new Location();
       $this->FormHandler = new FormHandler();
     }
-
     public function index() {
       $locations = $this->Location->getLocations();
       if ($locations != false) {
