@@ -1,6 +1,6 @@
 <?php
 
-  class security {
+  class Security {
 
     /**
      * Removes any HTML and javascript
