@@ -2,6 +2,11 @@
   require_once APP_PATH . '/libs/model/DatabaseHandler.class.php';
 
   class User {
+    /**
+     * Sessions can't not be changed in the Model / class
+     * You can only do that trough the controller
+     * @var [type]
+     */
     private $DatabaseHandler;
 
     public function __construct() {
@@ -29,9 +34,9 @@
       $userID = $this->getUserID($mail);
       if ($userID != false) {
         if ($this->verifyPassword($userID, $password)) {
-          $_SESSION['user']['mail'] = $mail;
           return(true);
         }
+        return(false);
       }
       else {
         return(false);

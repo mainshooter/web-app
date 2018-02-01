@@ -5,6 +5,6 @@
 ?>
 
 
-<h1 class="page-header">Home</h1>
+<h1 class="page-header"><?php echo $title; ?></h1>
 
-<p>Name: <?php echo " " . $name;?></p>
+<p><?php echo $content; ?></p>

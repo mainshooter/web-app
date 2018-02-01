@@ -3,6 +3,7 @@
   session_regenerate_id(true);
 
   define('APP_PATH', __DIR__);
+  define('APP_LANG', 'nl');
 
   ini_set('display_errors', 1);
   error_reporting(E_ALL);

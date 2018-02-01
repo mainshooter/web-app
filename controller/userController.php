@@ -24,6 +24,7 @@
         $mail = $this->FormHandler->getPostValue('userMail');
         $password = $this->FormHandler->getPostValue('userPassword');
         if ($this->User->verifyLogin($mail, $password) === true) {
+          $_SESSION['user']['mail'] = $mail;
           redirect('product/');
         }
         else {
@@ -37,9 +38,13 @@
       else {
         $data['error'] = '';
         loadHeader();
-        loadView('user/login.php');
+        loadView('user/login.php', $data);
         loadFooter();
       }
+    }
+
+    public function logout() {
+      $this->User->clientLogout();
     }
   }
 
