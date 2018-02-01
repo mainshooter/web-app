@@ -1,9 +1,9 @@
 <?php
-  require_once APP_PATH . '/libs/model/FormHandler.class.php';
-  require_once APP_PATH . '/libs/model/Product.class.php';
-  require_once APP_PATH .'/controller/parentController.php';
 
-  class productController extends parentController{
+  require_once APP_PATH . '/libs/model/Product.class.php';
+  require_once APP_PATH . '/controller/appController.php';
+
+  class productController extends appController {
     private $Product;
 
     public function __construct() {

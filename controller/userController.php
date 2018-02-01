@@ -1,14 +1,12 @@
 <?php
-  require_once APP_PATH . '/libs/model/User.class.php';
-  require_once APP_PATH . '/libs/model/FormHandler.class.php';
 
-  class userController {
-    private $User;
-    private $FormHandler;
+  require_once APP_PATH . '/controller/appController.php';
+
+  class userController extends appController {
+
 
     public function __construct() {
-      $this->User = new User();
-      $this->FormHandler = new FormHandler();
+      parent::__construct();
     }
 
     public function index() {

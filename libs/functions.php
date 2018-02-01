@@ -11,6 +11,12 @@
     }
   }
 
+  function loadCompleteView($viewLocation, $vars = false) {
+    loadHeader();
+    loadView($viewLocation, $vars);
+    loadFooter();
+  }
+
   function loadHeader() {
     include APP_PATH . '/view/theme/header.php';
   }

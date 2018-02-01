@@ -1,14 +1,13 @@
 <?php
   require_once APP_PATH . '/libs/model/Location.class.php';
-  require_once APP_PATH . '/libs/model/FormHandler.class.php';
+  require_once APP_PATH . '/controller/appController.php';
 
-  class locationController {
+  class locationController extends appController {
     private $Location;
-    private $FormHandler;
 
     public function __construct() {
+      parent::__construct();
       $this->Location = new Location();
-      $this->FormHandler = new FormHandler();
     }
     public function index() {
       $locations = $this->Location->getLocations();
